@@ -906,8 +906,13 @@ public class SimuRun {
 			IP = (String) o[0];
 			port = (int) o[1];
 			msg = "表位" + meterno + "-" + type + "-信道检测" + IP + ":" + port;
-			sData = getTermianlFrame(terminalIP, "读时钟"); // 注意必须使用terminalIP！！！
+//			sData = getTermianlFrame(terminalIP, "读时钟"); // 注意必须使用terminalIP！！！
+//			expect = "68************68940A04969605**************16";
+			sData = getTermianlFrame(terminalIP, "读IP和MAC"); // 注意必须使用terminalIP！！！
+//			680000C0A87F6068940E04969610C0A87F60023A190200019816
 			expect = "68************68940A04969605**************16";
+			expect = "68************68940E04969610**************0200019816";
+			expect = "68************68940E04969610**********************16";
 			result = commWithRecv.deal_one("【" + msg + "】", IP + ":" + port, sData, expect, 2500);
 			if (result.getResult().equals("OK")) {
 				if (ret[0].equals("")) {

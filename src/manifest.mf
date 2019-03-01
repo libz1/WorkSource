@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-class: javafx.base.JFXMain
+Class-path: lib/CommonProj.jar lib/gson-1.7.1.jar

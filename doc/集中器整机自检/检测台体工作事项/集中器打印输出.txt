@@ -1,0 +1,3 @@
+cd /mnt/data/bin/
+ks ms
+msserver

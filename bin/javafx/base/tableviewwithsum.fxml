@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<fx:root prefWidth="600.0" type="javafx.scene.layout.BorderPane"
+	xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+	<center>
+		<TableView fx:id="table_data" prefHeight="146.0" prefWidth="500.0"
+			BorderPane.alignment="CENTER" />
+	</center>
+	<bottom>
+		<TableView fx:id="table_sum" maxHeight="25.0" prefWidth="600.0"
+			BorderPane.alignment="CENTER">
+			<!-- 引入css进行样式控制 在URL中的样式表名称之前的@标志表示对应的样式表与FXML文件放在同一文件夹下 -->
+			<!-- xuky 2017.03.28 未生效  -->
+			<stylesheets>
+				<URL value="@Border.css" />
+			</stylesheets>
+
+		</TableView>
+	</bottom>
+
+
+</fx:root>

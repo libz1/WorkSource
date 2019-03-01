@@ -1,0 +1,152 @@
+CREATE TABLE `barcodeandaddr` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `addrBegin` varchar(255) DEFAULT NULL COMMENT '设备地址起始',
+  `addrEnd` varchar(255) DEFAULT NULL COMMENT '设备地址结束',
+  `longBarCodeBegin` varchar(255) DEFAULT NULL COMMENT '长条码起始',
+  `longBarCodeEnd` varchar(255) DEFAULT NULL COMMENT '长条码结束',
+  `shortBarCodeBegin` varchar(255) DEFAULT NULL COMMENT '短条码起始',
+  `shortBarCodeEnd` varchar(255) DEFAULT NULL COMMENT '短条码结束',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COMMENT='条码与设备地址对照表';
+
+
+
+CREATE TABLE `devinfo` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `addr` varchar(255) DEFAULT NULL COMMENT '设备地址',
+  `barCode` varchar(255) DEFAULT NULL COMMENT '条码信息',
+  `errcomputer` varchar(255) DEFAULT NULL COMMENT '测试错误机位',
+  `errdatetime` varchar(255) DEFAULT NULL COMMENT '测试错误时间',
+  `erroperater` varchar(255) DEFAULT NULL COMMENT '测试错误操作人',
+  `okcomputer` varchar(255) DEFAULT NULL COMMENT '测试成功机位',
+  `okdatetime` varchar(255) DEFAULT NULL COMMENT '测试成功时间',
+  `okoperater` varchar(255) DEFAULT NULL COMMENT '测试成功操作人',
+  `status` varchar(255) DEFAULT NULL COMMENT '设备当前状态',
+  `type` varchar(255) DEFAULT NULL COMMENT '设备类型',
+  PRIMARY KEY (`ID`),
+  KEY `index_add` (`addr`)
+) ENGINE=InnoDB AUTO_INCREMENT=916829 DEFAULT CHARSET=utf8 COMMENT='设备信息';
+
+
+
+CREATE TABLE `producecase` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `analys` varchar(255) DEFAULT NULL,
+  `caseno` int(11) NOT NULL COMMENT '用例编号',
+  `computer` varchar(255) DEFAULT NULL COMMENT '用例机位',
+  `delaytime` int(11) NOT NULL COMMENT '发前延时',
+  `expect` varchar(255) DEFAULT NULL COMMENT '期望回复',
+  `name` varchar(255) DEFAULT NULL COMMENT '用例名称',
+  `note` varchar(255) DEFAULT NULL COMMENT '用例备注',
+  `protocol` varchar(255) DEFAULT NULL COMMENT '协议类型',
+  `retrys` int(11) NOT NULL COMMENT '重试次数',
+  `send` varchar(255) DEFAULT NULL COMMENT '发出报文',
+  `subid` varchar(255) DEFAULT NULL COMMENT '所属测试计划ID',
+  `waittime` int(11) NOT NULL COMMENT '等待超时时间',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1068 DEFAULT CHARSET=utf8 COMMENT='测试用例表';
+
+
+CREATE TABLE `producecaseresult` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `analys` varchar(255) DEFAULT NULL,
+  `caseno` int(11) NOT NULL COMMENT '用例编号',
+  `computer` varchar(255) DEFAULT NULL COMMENT '测试机位',
+  `delaytime` int(11) NOT NULL COMMENT '发前延时',
+  `expect` varchar(255) DEFAULT NULL COMMENT '期望回复',
+  `name` varchar(255) DEFAULT NULL COMMENT '用例名称',
+  `note` varchar(255) DEFAULT NULL COMMENT '注释',
+  `port` varchar(255) DEFAULT NULL COMMENT '端口信息',
+  `protocol` varchar(255) DEFAULT NULL COMMENT '协议类型',
+  `recv` varchar(255) DEFAULT NULL COMMENT '接收数据',
+  `recvtime` varchar(255) DEFAULT NULL COMMENT '接收时间',
+  `result` varchar(255) DEFAULT NULL COMMENT '判断结果',
+  `retrys` int(11) NOT NULL COMMENT '重试次数',
+  `runID` int(11) NOT NULL COMMENT '运行ID',
+  `send` varchar(255) DEFAULT NULL COMMENT '发送数据',
+  `sendtime` varchar(255) DEFAULT NULL COMMENT '发送时间',
+  `sendtimes` int(11) NOT NULL COMMENT '发送次数',
+  `subid` varchar(255) DEFAULT NULL COMMENT '计划编号',
+  `waittime` int(11) NOT NULL COMMENT '超时等待时间',
+  PRIMARY KEY (`ID`),
+  KEY `index_runid` (`runID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4951758 DEFAULT CHARSET=utf8 COMMENT='测试用例执行结果信息表';
+
+
+CREATE TABLE `producecasesub` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `computer` varchar(255) DEFAULT NULL COMMENT '所属机位',
+  `name` varchar(255) DEFAULT NULL COMMENT '计划名称',
+  `no` varchar(255) DEFAULT NULL COMMENT '计划编号',
+  `note1` varchar(255) DEFAULT NULL COMMENT '备注信息1',
+  `note2` varchar(255) DEFAULT NULL COMMENT '备注信息2',
+  `note3` varchar(255) DEFAULT NULL COMMENT '备注信息3',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8 COMMENT='测试计划表';
+
+
+CREATE TABLE `producelog` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `addr` varchar(255) DEFAULT NULL COMMENT '设备地址',
+  `opName` varchar(255) DEFAULT NULL COMMENT '操作内容',
+  `opResult` varchar(255) DEFAULT NULL COMMENT '操作结果',
+  `opTime` varchar(255) DEFAULT NULL COMMENT '操作时间',
+  `operation` varchar(255) DEFAULT NULL COMMENT '操作人员',
+  `workStation` varchar(255) DEFAULT NULL COMMENT '操作机位',
+  PRIMARY KEY (`ID`),
+  KEY `index_addr_opt` (`addr`,`operation`)
+) ENGINE=InnoDB AUTO_INCREMENT=2636615 DEFAULT CHARSET=utf8 COMMENT='测试操作日志';
+
+
+CREATE TABLE `produceparam` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `computer` varchar(255) DEFAULT NULL COMMENT '适用机位',
+  `keyname` varchar(255) DEFAULT NULL COMMENT '主键',
+  `name` varchar(255) DEFAULT NULL COMMENT '名称',
+  `note1` varchar(255) DEFAULT NULL COMMENT '备注1',
+  `note2` varchar(255) DEFAULT NULL COMMENT '备注2',
+  `type` varchar(255) DEFAULT NULL COMMENT '类型',
+  `value` varchar(255) DEFAULT NULL COMMENT '数据',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=402 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `producerecord` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `addr` varchar(255) DEFAULT NULL COMMENT '设备地址',
+  `beginOpt` varchar(255) DEFAULT NULL COMMENT '批量开始测试时间',
+  `endOpt` varchar(255) DEFAULT NULL,
+  `endTime` varchar(255) DEFAULT NULL COMMENT '测试结束时间',
+  `opName` varchar(255) DEFAULT NULL COMMENT '测试人员',
+  `opResult` varchar(255) DEFAULT NULL COMMENT '测试结果',
+  `opTime` varchar(255) DEFAULT NULL COMMENT '个体开始时间',
+  `opUsingTime` bigint(20) DEFAULT NULL COMMENT ' 测试耗时',
+  `operation` varchar(255) DEFAULT NULL,
+  `prevAddr` varchar(255) DEFAULT NULL,
+  `workStation` varchar(255) DEFAULT NULL COMMENT '测试机位',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='测试记录表';
+
+
+CREATE TABLE `runtest` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `no` int(11) NOT NULL,
+  `port` varchar(255) DEFAULT NULL,
+  `recv` varchar(255) DEFAULT NULL,
+  `send` varchar(255) DEFAULT NULL,
+  `subid` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='测试回复用表';
+
+
+
+CREATE TABLE `usermanager` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `userPriority` int(11) NOT NULL COMMENT '用户级别',
+  `userid` varchar(255) DEFAULT NULL COMMENT '用户id',
+  `username` varchar(255) DEFAULT NULL COMMENT '姓名',
+  `userpwd` varchar(255) DEFAULT NULL COMMENT '密码',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COMMENT='用户管理表';
+
+

@@ -1,0 +1,10 @@
+CREATE TABLE `producelog2mes` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `producelogID` int(11) NOT NULL,
+  `addr` varchar(255) DEFAULT NULL,
+  `priority` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `transtime` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+	minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0"
+	tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER"
+	xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="javafx.module.TerminalCURDController">
+	<tabs>
+		<Tab text="终端档案维护" disable="true">
+			<content>
+				<BorderPane fx:id="object_crud_panel" />
+			</content>
+		</Tab>
+		<Tab text="串口参数管理">
+			<content>
+				<BorderPane fx:id="object_crud_panel_com" />
+			</content>
+		</Tab>
+		<Tab text="软件定时执行任务管理" disable="true">
+			<content>
+				<BorderPane fx:id="programtask_crud_panel_com" />
+			</content>
+		</Tab>
+		<Tab text="其他参数管理">
+			<content>
+				<VBox prefHeight="200.0" prefWidth="100.0">
+					<children>
+						<HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="800.0">
+							<children>
+								<Button mnemonicParsing="false" onAction="#saveDataAction"
+									prefHeight="23.0" prefWidth="105.0" text=" 保存参数" />
+							</children>
+							<opaqueInsets>
+								<Insets />
+							</opaqueInsets>
+							<padding>
+								<Insets left="20.0" />
+							</padding>
+						</HBox>
+						<GridPane>
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" maxWidth="394.0"
+									minWidth="10.0" prefWidth="266.0" />
+								<ColumnConstraints hgrow="SOMETIMES" maxWidth="630.0"
+									minWidth="10.0" prefWidth="534.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints />
+							</rowConstraints>
+							<children>
+								<Label text="前置机监听IP">
+									<GridPane.margin>
+										<Insets />
+									</GridPane.margin>
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_Prefix_ip" GridPane.columnIndex="1" />
+								<Label text="前置机监听端口" GridPane.rowIndex="1">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<Label text="通信终端地址" GridPane.rowIndex="2">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<Label text="代理模式(0为正常，1为代理)" GridPane.rowIndex="3">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<Label text="整个代理超时时间（单位：毫秒）" GridPane.rowIndex="4">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<Label text="单个代理超时时间（单位：毫秒）" GridPane.rowIndex="5">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_Prefix_port"
+									GridPane.columnIndex="1" GridPane.rowIndex="1" />
+								<TextField fx:id="txt_SendTerminal"
+									GridPane.columnIndex="1" GridPane.rowIndex="2" />
+								<TextField fx:id="txt_IsProxyModel"
+									GridPane.columnIndex="1" GridPane.rowIndex="3" />
+								<TextField fx:id="txt_All_timeout"
+									GridPane.columnIndex="1" GridPane.rowIndex="4" />
+								<TextField fx:id="txt_Single_timeout"
+									GridPane.columnIndex="1" GridPane.rowIndex="5" />
+								<Label text="目标服务器地址（多个时，使用逗号进行分隔）" GridPane.rowIndex="6">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_Targets" GridPane.columnIndex="1"
+									GridPane.rowIndex="6" />
+								<Label text="服务优先级" GridPane.rowIndex="7">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_svr_priority"
+									GridPane.columnIndex="1" GridPane.rowIndex="7" />
+								<Label text="服务序号" GridPane.rowIndex="8">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_svr_no" GridPane.columnIndex="1"
+									GridPane.rowIndex="8" />
+								<Label text="设备异常条码内容" GridPane.rowIndex="9">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_errbarcode" GridPane.columnIndex="1"
+									GridPane.rowIndex="9" />
+								<Label text="485表地址-MT485" GridPane.rowIndex="10">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_mt485" GridPane.columnIndex="1"
+									GridPane.rowIndex="10" />
+								<Label text="SEQ" GridPane.rowIndex="11">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_seq" GridPane.columnIndex="1"
+									GridPane.rowIndex="11" />
+								<Label text="当前方案" GridPane.rowIndex="12">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_subid" GridPane.columnIndex="1"
+									GridPane.rowIndex="12" />
+								<Label text="去掉条码后N位" GridPane.rowIndex="13">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_lostbit" GridPane.columnIndex="1"
+									GridPane.rowIndex="13" />
+								<Label text="验证设备地址-VERIFYMT" GridPane.rowIndex="14">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_verifymt" GridPane.columnIndex="1"
+									GridPane.rowIndex="14" />
+							</children>
+						</GridPane>
+					</children>
+				</VBox>
+			</content>
+		</Tab>
+	</tabs>
+</TabPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+	prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="javafx.module.TerminalParameterController1">
+	<top>
+		<HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+	</top>
+	<center>
+		<TabPane prefHeight="400.0" prefWidth="600.0"
+			tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab text="Untitled Tab 1">
+					<content>
+						<TabPane prefHeight="400.0" prefWidth="600.0"
+							tabClosingPolicy="UNAVAILABLE">
+							<tabs>
+								<Tab text="Untitled Tab 1">
+									<content>
+										<BorderPane fx:id="tableViewWithSum_pane" />
+									</content>
+								</Tab>
+							</tabs>
+						</TabPane>
+					</content>
+				</Tab>
+				<Tab text="Untitled Tab 2">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<padding>
+								<Insets top="10">
+								</Insets>
+							</padding>
+							<top>
+								<Label text="Please Sign Up" style="-fx-font-weight: bold; -fx-font-size: 20"
+									BorderPane.alignment="CENTER"></Label>
+							</top>
+							<bottom><!--Must be inside a position property -->
+								<HBox spacing="10" alignment="center">
+									<padding>
+										<Insets right="10" bottom="10"></Insets>
+									</padding>
+									<Button text="Enter"></Button>
+									<Button text="Help"></Button>
+									<Button text="Cancel"></Button>
+								</HBox>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+
+	</center>
+</BorderPane>

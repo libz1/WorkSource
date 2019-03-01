@@ -1,0 +1,85 @@
+-0.29
+FEFEFEFEFE014D173030303036303030303030333030303031306A17
+
+1237	10:45:58.997	0.00000512	Project1.exe	IOCTL_SERIAL_PURGE                  	COM50	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+1238	10:45:58.997	0.00012543	Project1.exe	IRP_MJ_WRITE                        	COM50	SUCCESS	Length: 12, Data: FE FE FE FE FE 01 4D 07 11 34 45 17 	
+1239	10:45:59.013	0.00000597	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1240	10:45:59.013	0.00000384	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1241	10:45:59.013	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1242	10:45:59.013	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1243	10:45:59.028	0.00064081	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1244	10:45:59.028	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 01 	
+1245	10:45:59.028	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 4D 	
+1246	10:45:59.028	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1247	10:45:59.028	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1248	10:45:59.028	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1249	10:45:59.044	0.00000469	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 17 	
+1250	10:46:25.205	0.00000469	Project1.exe	IOCTL_SERIAL_PURGE                  	COM50	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+1251	10:46:25.205	0.00010751	Project1.exe	IRP_MJ_WRITE                        	COM50	SUCCESS	Length: 12, Data: FE FE FE FE FE 01 A9 03 06 09 17 0D 	
+1252	10:46:25.221	0.00001493	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1253	10:46:25.221	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1254	10:46:25.221	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1255	10:46:25.221	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1256	10:46:25.221	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1257	10:46:25.221	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 01 	
+1258	10:46:25.221	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: A9 	
+1259	10:46:25.221	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1260	10:46:25.236	0.00001877	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1261	10:46:25.236	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1262	10:46:25.252	0.00000469	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 17 	
+1263	10:46:44.487	0.00000555	Project1.exe	IOCTL_SERIAL_PURGE                  	COM50	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+1264	10:46:44.487	0.00013183	Project1.exe	IRP_MJ_WRITE                        	COM50	SUCCESS	Length: 29, Data: FE FE FE FE FE 01 4D 18 27 30 30 30 30 36 30 30 30 30 30 30 33 30 30 30 30 30 30 90 17 	
+1265	10:46:44.518	0.00000512	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1266	10:46:44.518	0.00000384	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1267	10:46:44.518	0.00000299	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1268	10:46:44.534	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1269	10:46:44.534	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1270	10:46:44.534	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 01 	
+1271	10:46:44.534	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 4D 	
+1272	10:46:44.534	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1273	10:46:44.534	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1274	10:46:44.534	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1275	10:46:44.549	0.00002219	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 17 	
+1276	10:46:44.549	0.00000171	Project1.exe	IOCTL_SERIAL_PURGE                  	COM50	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+1277	10:46:44.549	0.00003968	Project1.exe	IRP_MJ_WRITE                        	COM50	SUCCESS	Length: 12, Data: FE FE FE FE FE 01 A9 03 06 09 17 0D 	
+1278	10:46:44.565	0.00002986	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1279	10:46:44.565	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1280	10:46:44.565	0.00000299	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1281	10:46:44.565	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1282	10:46:44.580	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1283	10:46:44.580	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 01 	
+1284	10:46:44.580	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: A9 	
+1285	10:46:44.580	0.00000085	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1286	10:46:44.580	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1287	10:46:44.580	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 06 	
+1288	10:46:44.596	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 17 	
+1289	10:47:54.334	0.00000469	Project1.exe	IOCTL_SERIAL_PURGE                  	COM50	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+1290	10:47:54.334	0.00013012	Project1.exe	IRP_MJ_WRITE                        	COM50	SUCCESS	Length: 11, Data: FE FE FE FE FE 01 4D 06 28 28 17 	
+1291	10:47:54.350	0.00000469	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1292	10:47:54.350	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1293	10:47:54.350	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1294	10:47:54.350	0.00000299	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1295	10:47:54.366	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: FE 	
+1296	10:47:54.366	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 01 	
+1297	10:47:54.366	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 4D 	
+1298	10:47:54.366	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 17 	
+1299	10:47:54.366	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1300	10:47:54.366	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1301	10:47:54.366	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1302	10:47:54.366	0.00000384	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1303	10:47:54.366	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 36 	
+1304	10:47:54.366	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1305	10:47:54.366	0.00000213	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1306	10:47:54.366	0.00000128	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1307	10:47:54.366	0.00000299	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1308	10:47:54.366	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1309	10:47:54.366	0.00000171	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1310	10:47:54.381	0.00000256	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 33 	
+1311	10:47:54.381	0.00000427	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1312	10:47:54.381	0.00000341	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1313	10:47:54.381	0.00000384	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1314	10:47:54.381	0.00000299	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1315	10:47:54.381	0.00000341	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 31 	
+1316	10:47:54.381	0.00001579	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 30 	
+1317	10:47:54.381	0.00000299	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 6A 	
+1318	10:47:54.397	0.00000341	Project1.exe	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 17 	

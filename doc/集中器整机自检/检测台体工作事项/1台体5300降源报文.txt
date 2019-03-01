@@ -1,0 +1,13 @@
+71	10:16:36.429	0.00000512	TerminalTest.e	IOCTL_SERIAL_PURGE                  	COM50	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+72	10:16:36.429	0.00011135	TerminalTest.e	IRP_MJ_WRITE                        	COM50	SUCCESS	Length: 12, Data: FE FE FE FE FE 01 41 07 33 31 64 17 	
+73	10:16:36.475	0.00000597	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 11, Data: FE FE FE FE FE 01 41 06 06 06 17 	
+74	10:16:36.475	0.00000171	TerminalTest.e	IOCTL_SERIAL_PURGE                  	COM50	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+75	10:16:36.475	0.00005333	TerminalTest.e	IRP_MJ_WRITE                        	COM50	SUCCESS	Length: 46, Data: F9 F9 F9 F9 F9 B1 10 00 02 00 10 20 13 88 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2E E0 5D C0 00 00 7C B2 	
+76	10:16:36.538	0.00003370	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: B1 	
+77	10:16:36.538	0.00000299	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 10 	
+78	10:16:36.538	0.00000213	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 00 	
+79	10:16:36.538	0.00000171	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 02 	
+80	10:16:36.538	0.00000171	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 00 	
+81	10:16:36.538	0.00000171	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 10 	
+82	10:16:36.538	0.00000213	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 7A 	
+83	10:16:36.553	0.00000256	TerminalTest.e	IRP_MJ_READ                         	COM50	SUCCESS	Length: 1, Data: 35 	

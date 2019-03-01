@@ -1,0 +1,7 @@
+2019.02.13 8:39
+
+@许开颜 
+II采数据上传原接口：http://10.1.200.16:8088/MesFrameWork.asmx?op=UploadTestWORKData
+改为：                       http://10.1.200.16:8087/MesNewWebService.asmx?op=UploadTestWORKData
+只变更WebService地址，其他不变
+

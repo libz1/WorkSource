@@ -1,0 +1,5 @@
+II采并行测试执行效率统计  每小时产量信息 
+select count(*),max(optime),min(optime) from producerecord where optime >= '2018-03-25 15:00:00:000' and optime < '2018-03-25 16:00:00:000' and opresult = '测试成功';
+
+|     1032 | 2018-03-25 15:59:45:657 | 2018-03-25 15:00:13:590 |
+

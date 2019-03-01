@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="parameterSet_setChannel" class="javafx.base.ParameterSet">
+		<!-- 多个参数 参考http://blog.csdn.net/aigoleague/article/details/10473113 -->
+		<constructor-arg index="0">
+			<value>4500</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>2</value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value></value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="parameterSet_setMaster" class="javafx.base.ParameterSet">
+		<!-- 多个参数 参考http://blog.csdn.net/aigoleague/article/details/10473113 -->
+		<constructor-arg index="0">
+			<value>4500</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>3</value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value></value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="parameterSet_setReadPlan" class="javafx.base.ParameterSet">
+		<!-- 多个参数 参考http://blog.csdn.net/aigoleague/article/details/10473113 -->
+		<constructor-arg index="0">
+			<value>6014</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>127</value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value>Func</value>
+		</constructor-arg>
+		<constructor-arg index="3">
+			<value>true</value>
+		</constructor-arg>
+		<constructor-arg index="4">
+			<value>方案编号</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="parameterSet_setReadTask" class="javafx.base.ParameterSet">
+		<!-- 多个参数 参考http://blog.csdn.net/aigoleague/article/details/10473113 -->
+		<constructor-arg index="0">
+			<value>6012</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>127</value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value>Func</value>
+		</constructor-arg>
+		<constructor-arg index="3">
+			<value>true</value>
+		</constructor-arg>
+		<constructor-arg index="4">
+			<value>任务ID</value>
+		</constructor-arg>
+	</bean>
+
+
+</beans>
+

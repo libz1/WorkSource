@@ -1,0 +1,4 @@
+select avg(opUsingTime) from producerecord where addr like "sleep_time-%";
+select avg(opUsingTime) from producerecord where addr = "sleep_time-10000";
+select avg(opUsingTime) from producerecord where addr = "sleep_time-8000";
+select avg(opUsingTime) from producerecord where addr = "sleep_time-1000";

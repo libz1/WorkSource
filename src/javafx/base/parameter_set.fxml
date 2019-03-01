@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root prefWidth="600.0" type="javafx.scene.layout.BorderPane"
+	xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+	<top>
+		<HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="605.0"
+			BorderPane.alignment="CENTER">
+			<children>
+				<Button mnemonicParsing="false" onAction="#setParaAction"
+					text="设置终端参数">
+					<HBox.margin>
+						<Insets left="15.0" right="10.0" />
+					</HBox.margin>
+				</Button>
+				<Label fx:id="lb_result" prefHeight="15.0" prefWidth="76.0"
+					text="..." />
+				<HBox fx:id="hbox_delelement" alignment="CENTER_LEFT"
+					prefHeight="45.0" prefWidth="347.0">
+					<children>
+						<Button mnemonicParsing="false" onAction="#delParaAction"
+							prefHeight="23.0" prefWidth="241.0" text="删除终端内参数的指定元素">
+							<HBox.margin>
+								<Insets left="10.0" />
+							</HBox.margin>
+						</Button>
+						<Label fx:id="hbox_delcol" prefHeight="15.0" prefWidth="120.0"
+							text="元素编号">
+							<HBox.margin>
+								<Insets left="5.0" right="5.0" />
+							</HBox.margin>
+						</Label>
+						<TextField fx:id="txt_delid" prefHeight="23.0" prefWidth="110.0">
+							<HBox.margin>
+								<Insets right="5.0" />
+							</HBox.margin>
+						</TextField>
+						<Label fx:id="lb_delresult" prefHeight="15.0" prefWidth="120.0"
+							text="..." />
+					</children>
+				</HBox>
+			</children>
+		</HBox>
+	</top>
+	<bottom>
+		<VBox prefHeight="119.0" prefWidth="610.0" BorderPane.alignment="CENTER">
+			<children>
+				<HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="610.0">
+					<children>
+						<Label text="数据">
+							<HBox.margin>
+								<Insets left="30.0" />
+							</HBox.margin>
+						</Label>
+						<TextField fx:id="txt_datavalue" prefHeight="23.0"
+							prefWidth="256.0">
+							<HBox.margin>
+								<Insets left="5.0" />
+							</HBox.margin>
+						</TextField>
+						<Button mnemonicParsing="false" onAction="#saveParaAction"
+							prefHeight="23.0" prefWidth="55.0" text="修改">
+							<HBox.margin>
+								<Insets left="5.0" />
+							</HBox.margin>
+						</Button>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<Label text="含义">
+							<HBox.margin>
+								<Insets left="30.0" />
+							</HBox.margin>
+						</Label>
+						<TextArea fx:id="txt_definevalue" prefHeight="76.0"
+							prefWidth="530.0" wrapText="true">
+							<HBox.margin>
+								<Insets bottom="10.0" left="5.0" />
+							</HBox.margin>
+						</TextArea>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</bottom>
+	<right>
+		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="92.0"
+			BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btn_addelement" mnemonicParsing="false"
+					onAction="#addArrayAction" text="添加元素" visible="false">
+					<VBox.margin>
+						<Insets bottom="5.0" />
+					</VBox.margin>
+				</Button>
+				<Button fx:id="btn_delelement" mnemonicParsing="false"
+					onAction="#delArrayAction" text="删除元素" visible="false" />
+			</children>
+		</VBox>
+	</right>
+	<center>
+		<TableView fx:id="table_paradata" prefHeight="146.0"
+			prefWidth="500.0" BorderPane.alignment="CENTER">
+			<BorderPane.margin>
+				<Insets left="10.0" />
+			</BorderPane.margin>
+		</TableView>
+	</center>
+</fx:root>

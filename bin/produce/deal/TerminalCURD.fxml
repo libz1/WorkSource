@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+	minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0"
+	tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER"
+	xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="produce.deal.TerminalCURDController">
+	<tabs>
+		<Tab disable="true" text="终端档案维护">
+			<content>
+				<BorderPane fx:id="object_crud_panel" />
+			</content>
+		</Tab>
+		<Tab text="串口参数管理">
+			<content>
+				<BorderPane fx:id="object_crud_panel_com" />
+			</content>
+		</Tab>
+		<Tab text="软件运行参数管理">
+			<content>
+				<BorderPane>
+					<center>
+						<BorderPane fx:id="object_crud_panel_param" />
+					</center>
+					<top>
+						<HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="800.0"
+							BorderPane.alignment="CENTER">
+							<children>
+								<Label text="PCID">
+									<HBox.margin>
+										<Insets left="10.0" />
+									</HBox.margin>
+								</Label>
+								<ComboBox fx:id="cb_pcid" prefHeight="23.0" prefWidth="208.0">
+									<HBox.margin>
+										<Insets left="5.0" />
+									</HBox.margin>
+								</ComboBox>
+							</children>
+						</HBox>
+					</top>
+				</BorderPane>
+
+			</content>
+		</Tab>
+		<Tab disable="true" text="软件定时执行任务管理">
+			<content>
+				<BorderPane fx:id="programtask_crud_panel_com" />
+			</content>
+		</Tab>
+		<Tab text="运行参数管理">
+			<content>
+				<VBox prefHeight="200.0" prefWidth="100.0">
+					<children>
+						<HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="800.0">
+							<children>
+								<Button mnemonicParsing="false" onAction="#saveDataAction"
+									prefHeight="23.0" prefWidth="105.0" text=" 保存参数" />
+							</children>
+							<opaqueInsets>
+								<Insets />
+							</opaqueInsets>
+							<padding>
+								<Insets left="20.0" />
+							</padding>
+						</HBox>
+						<GridPane>
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0"
+									minWidth="10.0" prefWidth="166.0" />
+								<ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0"
+									minWidth="10.0" prefWidth="234.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0"
+									vgrow="SOMETIMES" />
+								<RowConstraints />
+							</rowConstraints>
+							<children>
+								<Label text="前置机监听IP">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_Prefix_ip"
+									GridPane.columnIndex="1" />
+
+								<Label text="前置机监听端口" GridPane.rowIndex="1">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_Prefix_port" GridPane.columnIndex="1"
+									GridPane.rowIndex="1" />
+
+								<Label text="测试工装UDP-IP" GridPane.rowIndex="2">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_UDPCLIENT_IP" GridPane.columnIndex="1"
+									GridPane.rowIndex="2" />
+
+								<Label text="测试工装UDP-端口" GridPane.rowIndex="3">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_UDPCLIENT_PORT" GridPane.columnIndex="1"
+									GridPane.rowIndex="3" />
+
+								<Label text="本机UDP-IP" GridPane.rowIndex="4">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_UDPSVR_IP" GridPane.columnIndex="1"
+									GridPane.rowIndex="4" />
+
+								<Label text="本机UDP-端口" GridPane.rowIndex="5">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_UDPSVR_PORT" GridPane.columnIndex="1"
+									GridPane.rowIndex="5" />
+
+								<Label text="终端IP地址" GridPane.rowIndex="6">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_TERMINAL_IP" GridPane.columnIndex="1"
+									GridPane.rowIndex="6" />
+
+								<Label text="详细日志记录" GridPane.rowIndex="7">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_LOG_Level" GridPane.columnIndex="1"
+									GridPane.rowIndex="7" />
+
+								<Label text="链路保持端口" GridPane.rowIndex="8">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_Prefix_port_New" GridPane.columnIndex="1"
+									GridPane.rowIndex="8" />
+
+								<Label text="等待时间(毫秒)" GridPane.rowIndex="9">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_all_timeout" GridPane.columnIndex="1"
+									GridPane.rowIndex="9" />
+
+								<Label text="工作中心ID" GridPane.rowIndex="10">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_workID" GridPane.columnIndex="1"
+									GridPane.rowIndex="10" />
+
+								<Label text="模块检测工装扫描启动码" GridPane.rowIndex="11">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+								</Label>
+								<TextField fx:id="txt_startqcode" GridPane.columnIndex="1"
+									GridPane.rowIndex="11" />
+							</children>
+						</GridPane>
+					</children>
+				</VBox>
+			</content>
+		</Tab>
+	</tabs>
+</TabPane>

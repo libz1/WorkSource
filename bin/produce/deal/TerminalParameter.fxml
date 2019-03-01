@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="produce.deal.TerminalParameterController">
+	<center>
+		<TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+				<Tab fx:id="tab_test" text="II采生产测试">
+					<content>
+						<SplitPane dividerPositions="0.94" prefHeight="600.0"
+							prefWidth="600.0">
+							<items>
+								<BorderPane prefHeight="600.0" prefWidth="600.0">
+									<top>
+										<VBox BorderPane.alignment="CENTER">
+											<children>
+												<HBox alignment="CENTER_LEFT" prefHeight="45.0"
+													prefWidth="700.0">
+													<children>
+														<Label prefWidth="60.0" text="扫描条码">
+															<GridPane.margin>
+																<Insets left="5.0" />
+															</GridPane.margin>
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</Label>
+														<TextField fx:id="input_produceBarCode"
+															prefHeight="23.0" prefWidth="180.0" text="160000000001">
+															<HBox.margin>
+																<Insets left="3" right="3" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="input_produceBarCode1"
+															prefHeight="23.0" prefWidth="50.0" visible="true" text="98062">
+															<HBox.margin>
+																<Insets left="3" right="3" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="input_produceBarCode2"
+															prefHeight="23.0" prefWidth="50.0" visible="true" text="98063">
+															<HBox.margin>
+																<Insets left="3" right="3" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="input_produceBarCode3"
+															prefHeight="23.0" prefWidth="50.0" visible="true" text="98064">
+															<HBox.margin>
+																<Insets left="3" right="3" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="input_produceBarCode4"
+															prefHeight="23.0" prefWidth="50.0" visible="true" text="98065">
+															<HBox.margin>
+																<Insets left="3" right="3" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="input_produceBarCode5"
+															prefHeight="23.0" prefWidth="40.0" visible="true" text="98066">
+															<HBox.margin>
+																<Insets left="3" right="3" />
+															</HBox.margin>
+														</TextField>
+														<Label fx:id="lable_result" prefHeight="40.0"
+															prefWidth="180.0" text="">
+															<HBox.margin>
+																<Insets left="10.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+												<GridPane>
+													<columnConstraints>
+														<ColumnConstraints hgrow="SOMETIMES"
+															maxWidth="766.0" minWidth="10.0" prefWidth="766.0" />
+													</columnConstraints>
+													<rowConstraints>
+														<RowConstraints minHeight="10.0"
+															prefHeight="30.0" vgrow="SOMETIMES" />
+														<RowConstraints minHeight="10.0"
+															prefHeight="30.0" vgrow="SOMETIMES" />
+														<RowConstraints />
+														<RowConstraints />
+														<RowConstraints />
+													</rowConstraints>
+													<children>
+														<Label fx:id="txt_showMsg" prefHeight="19.0"
+															prefWidth="757.0" text="..." GridPane.rowIndex="1">
+															<GridPane.margin>
+																<Insets left="5.0" />
+															</GridPane.margin>
+														</Label>
+														<Label fx:id="txt_showTitle" prefHeight="15.0"
+															prefWidth="495.0" text="...">
+															<GridPane.margin>
+																<Insets left="5.0" />
+															</GridPane.margin>
+														</Label>
+													</children>
+												</GridPane>
+											</children>
+										</VBox>
+									</top>
+									<center>
+										<BorderPane fx:id="tableview_testDetail" />
+									</center>
+								</BorderPane>
+								<BorderPane>
+									<bottom>
+										<BorderPane fx:id="tableview_begin_end" prefHeight="330.0" />
+									</bottom>
+									<center>
+										<BorderPane fx:id="tableview_param"  />
+									</center>
+									<top>
+										<VBox prefHeight="90.0" prefWidth="105.0"
+											BorderPane.alignment="CENTER">
+											<children>
+												<HBox alignment="CENTER_LEFT" prefHeight="45.0"
+													prefWidth="105.0">
+													<children>
+														<Button mnemonicParsing="false" onAction="#openPortAction"
+															text="开启通信服务器" prefWidth="120.0">
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</Button>
+														<Button mnemonicParsing="false" onAction="#chanePortRateAction"
+															text="修改速率">
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</Button>
+														<Label text="串口ID">
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</Label>
+														<TextField prefWidth="40.0" fx:id="input_comm" text="2">
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</TextField>
+														<Label text="速率">
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</Label>
+														<TextField prefWidth="70.0" fx:id="input_rate" text="600">
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</TextField>
+													</children>
+												</HBox>
+												<HBox alignment="CENTER_LEFT" prefHeight="45.0"
+													prefWidth="105.0">
+													<children>
+														<Label fx:id="input_changeresult" prefHeight="15.0" prefWidth="291.0" text="...">
+															<HBox.margin>
+																<Insets left="5.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+											</children>
+										</VBox>
+									</top>
+								</BorderPane>
+							</items>
+						</SplitPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+</BorderPane>

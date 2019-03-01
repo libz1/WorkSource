@@ -1,0 +1,76 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<!-- 通常，一个session-factory节点代表一个数据库 -->
+	<session-factory>
+
+		<!-- 1. 数据库连接配置 -->
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql:///hibernate
+		</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">1234</property>
+		<!-- 数据库方法配置， hibernate在运行的时候，会根据不同的方言生成符合当前数据库语法的sql -->
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQL5Dialect
+		</property>
+		<!-- c3p0的相关的配置 -->
+		<!--C3P0配置 -->
+		<!-- <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property> 
+			<property name="hibernate.c3p0.max_size">20</property> <property name="hibernate.c3p0.min_size">8</property> 
+			<property name="hibernate.c3p0.timeout">120</property> <property name="hibernate.c3p0.max_statements">100</property> 
+			<property name="hibernate.c3p0.idle_test_period">120</property> <property 
+			name="hibernate.c3p0.acquire_increment">1</property> <property name="c3p0.testConnectionOnCheckout">true</property> 
+			<property name="c3p0.idleConnectionTestPeriod">18000</property> <property 
+			name="c3p0.maxIdleTime">25000</property> -->
+
+
+		<!-- Hibernate二级缓存的相关配置 -->
+		<!--二级缓存默认是关闭的 -->
+		<!--1、在Hibernate的hibernate.cfg.xml配置文件中，开启二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!--2、设置二级缓存的提供类 -->
+		<!--使用EHCache进行Hibernate的二级缓存 -->
+		<property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>
+		<!--3、开启查询缓存 -->
+		<!--主要对list而言 -->
+		<!--1.Query先调用 -->
+		<!--2.使用setCacheable(true).list() -->
+		<!--3.使用setCacheable(true).list()，主要是，用于设list()的二级缓存和是否到缓存里面取数据 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!--4、在Hibernate4.0以后，需要设置factort_class，更好的缓存实现 -->
+		<!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> -->
+		<!-- 5、说明ehcache的配置文件路径 -->
+		<property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property>
+
+
+
+		<!-- 2. 其他相关配置 -->
+		<!-- 2.1 显示hibernate在运行时候执行的sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 2.2 格式化sql -->
+		<!-- <property name="hibernate.format_sql">true</property> -->
+		<!-- 2.3 自动建表 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!--3.加载实体的映射文件 -->
+		<mapping resource="com/hibernate/entity/Student.hbm.xml" />
+		<mapping resource="com/hibernate/entity/ClassRoom.hbm.xml" />
+
+		<!--在Hibernate的配置文件里面，声明使用二级缓存的类 -->
+		<!--1、指定哪些类使用二级缓存 -->
+		<class-cache usage="read-only" class="com.hibernate.entity.Student" />
+		<class-cache usage="read-only" class="com.hibernate.entity.ClassRoom" 
+			/>
+		<!--2、集合缓存（由一的方去获取多的一方的List的数据，也加入二级缓存里面） -->
+		<!-- <class-cache usage="read-only" class="com.hibernate.entity.ClassRoom.stus" 
+			/> -->
+
+
+	</session-factory>
+</hibernate-configuration>

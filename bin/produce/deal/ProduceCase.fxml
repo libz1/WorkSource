@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="produce.deal.ProduceCaseCURDController">
+	<tabs>
+		<Tab text="测试方案及用例管理">
+			<content>
+				<BorderPane>
+					<top>
+						<BorderPane>
+							<top>
+								<HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+									<children>
+										<Label text="PCID">
+											<HBox.margin>
+												<Insets left="10.0" />
+											</HBox.margin>
+										</Label>
+										<ComboBox fx:id="cb_pcid" prefHeight="23.0" prefWidth="208.0">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</ComboBox>
+									</children>
+								</HBox>
+							</top>
+							<center>
+								<BorderPane fx:id="object_crud_panel_sub1" prefHeight="180" prefWidth="200.0" BorderPane.alignment="CENTER" />
+							</center>
+						</BorderPane>
+					</top>
+					<center>
+						<BorderPane fx:id="object_crud_panel_case1" prefHeight="430.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+					</center>
+				</BorderPane>
+			</content>
+		</Tab>
+		<Tab text="测试辅助用数据">
+			<content>
+				<BorderPane fx:id="object_crud_panel_assitant" />
+			</content>
+		</Tab>
+	</tabs>
+</TabPane>

@@ -1,0 +1,109 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+/* 参考如下文档
+ * http://blog.csdn.net/xby1993/article/details/24833799
+ * http://blog.csdn.net/zavens/article/details/43560797
+ 选择器命名规范：如ToggleButton需要写成：.toggle-button
+   -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+   -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+   * -fx-border-color: rgb(49, 89, 23);
+ */
+.tab-pane{
+    -fx-border-radius: 5;
+}
+#child_tabpane{
+	-fx-border-color: rgb(211, 211, 211);
+}
+
+/*  设置tableview的标题栏
+.table-view .column-header .label {
+    -fx-alignment: CENTER_LEFT;
+}
+*/
+
+
+/*  设置tableview的标题栏高度
+ * # 为id信息 ，.xxx为类信息
+ * 1、调整字体大小
+ * 2、调整column-header的size
+	-fx-size: 0.005em;
+ */
+#test_tableview_sum .column-header .label{
+	-fx-font-size: 0.05em;
+}
+#test_tableview_sum .column-header{
+	-fx-size: 0.1;
+}
+
+.button {
+   -fx-border-radius: 0;
+   -fx-text-fill: white;
+   -fx-font-family: "Arial Narrow";
+   -fx-font-weight: bold;
+   -fx-background-color: linear-gradient(#0072C6, #0072C6);
+}
+
+.button1{
+    -fx-font: 22.0 arial;
+    -fx-base: #b6e7c9;
+}
+
+
+/*
+ * http://blog.csdn.net/theonegis/article/details/50189443
+ *
+ *
+ */
+.button:active {
+   -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+
+/* 记住对应的路径是与样式表的相对路径。因此，在例5-2所示的代码中，background.jpg放在与Login.css相同的文件夹下
+
+.root {
+   -fx-background-image: url("background.jpg");
+}
+*/
+
+/* 使用.label样式类，它表示对应的样式会影响表单中所有的label控件
+ * 参考JavaFX CSS参考指南
+ * http://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html#typeeffect
+
+.label {
+   -fx-font-size: 12px;
+   -fx-font-weight: bold;
+   -fx-text-fill: #333333;
+   -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+ */
+
+   /*  文本的填充颜色被设置为深灰色(#818181)*/
+   /* 应用了一个内阴影效果innershadow，创建了一个浮雕效果。你可以通过将文本的填充颜色设置为比背景色深一些的颜色来产生内阴影效果
+#welcome-text {
+   -fx-font-size: 32px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+*/
+/*
+#actiontarget {
+   -fx-fill: FIREBRICK;
+   -fx-font-weight: bold;
+   -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+ */
+
+
+
+/* 当用户将鼠标悬停在按钮上时的显示外观  */
+/* 可以使用hover伪类(pseudo-class)来实现。一个伪类由类选择器、冒号以及伪类名称构成
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+.button:hover {
+   -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+new Color(0, 114, 198)
+ *
+*/

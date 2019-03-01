@@ -1,0 +1,126 @@
+/* 2017-12 操作量，成功量 */
+select * from
+(
+select left(optime,10) as date,count(distinct addr) as all_sl from producelog
+where left(optime,7) = '2017-12'
+group by left(optime,10)
+) as a,
+(
+select left(optime,10) as date,count(distinct addr) as ok_sl from producelog 
+where left(optime,7) = '2017-12' and operation ='测试成功(2)'
+group by left(optime,10)
+) as b
+where a.date = b.date
+
+/*
+
+select * from 
+(
+select distinct addr from producelog where left(optime,10) = '2017-12-06' 
+) as a
+where a.addr not in 
+(
+select distinct addr from producelog where left(optime,10) = '2017-12-06' and operation ='测试成功(2)'
+)
+;
+
+
+
+select left(optime,10) as time,count(distinct addr) as sl from producelog
+where left(optime,7) = '2017-12'
+group by left(optime,10);
+
+
+
+select * from (
+select left(okdatetime,10) as rq,count(*)  as sl from devinfo group by left(okdatetime,10)) as a
+group by a.rq desc;  
+1、日工作量统计   统计2017.12.25日工作量，成功数量(7813)
+
+
+
+select count(*) from devinfo where 
+((errdatetime >= '2017-12-25 00:00:000' and errdatetime <= '2017-12-25 23:59:59') 
+or (okdatetime >= '2017-12-25 00:00:000' and okdatetime <= '2017-12-25 23:59:59'));
+==> 7821  工作量
+select count(*) from devinfo where left(okdatetime,10) = '2017-12-25';
+==> 7813  成功情况
+
+select * from (
+select * from devinfo where 
+((errdatetime >= '2017-12-25 00:00:000' and errdatetime <= '2017-12-25 23:59:59') 
+or (okdatetime >= '2017-12-25 00:00:000' and okdatetime <= '2017-12-25 23:59:59')) ) as a
+where a.ID not in( select ID from  devinfo where left(okdatetime,10) = '2017-12-25');
+
+==> 8 有err数据，没有ok数据的
+
+因为devinfo信息是可以被替换的，所以无法统计当时的数据情况
+
+
+producelog => 7826
+
+
+select * from producelog where left(optime,10) = '2017-12-25' and addr = '001700250174'
+order by  optime;
+
+;
+
+
+select  sl,count(*)
+from(
+select addr,count(*) as sl from producelog where left(optime,10) = '2017-12-25'
+group by addr
+) as a
+group by sl ;
+
+select addr,count(*) as sl from producelog where left(optime,10) = '2017-12-25'
+group by addr
+order by sl desc;
+
+select count(distinct addr) from producelog where left(optime,10) = '2017-12-25';
+
+select left(optime,10) as time,count(distinct addr) as sl from producelog
+where left(optime,7) = '2017-12'
+group by left(optime,10);
+*/
+
+
+/*
+select * from devinfo where 
+((errdatetime >= '2017-12-25 00:00:000' and errdatetime <= '2017-12-25 23:59:59') 
+or (okdatetime >= '2017-12-25 00:00:000' and okdatetime <= '2017-12-25 23:59:59'))
+and left(okdatetime,10) != '2017-12-25';
+特殊情况数据：
+ok在前，err在今  视为当前的工作，工作结果是失败
+
+*/
+
+/*
+2017-11-19	12887
+
+2017-12-25	7813
+
+
+select count(*) from devinfo where 
+(errdatetime >= '2017-11-19 00:00:000' and errdatetime <= '2017-11-19 23:59:59') 
+or (okdatetime >= '2017-11-19 00:00:000' and okdatetime <= '2017-11-19 23:59:59');
+
+12928
+
+select * from devinfo where 
+left(okdatetime,10) = '2017-11-19';
+12887
+
+存在数据为，
+
+4889	000000000011		38A6-6010	2017-11-19 08:51:05:687	王延鹏	1CFB-8CCA	2017-11-20 20:24:58:632	admin	测试完毕(1)	II采(1)
+select * from devinfo where 
+((errdatetime >= '2017-12-23 00:00:000' and errdatetime <= '2017-12-23 23:59:59') 
+or (okdatetime >= '2017-12-23 00:00:000' and okdatetime <= '2017-12-23 23:59:59'))
+and left(okdatetime,10) != '2017-12-23';
+
+*/
+
+
+
+

@@ -1,0 +1,31 @@
+1、统计每日II采生产数量
+select left(okdatetime,10),count(*) from devinfo group by left(okdatetime,10);
+
+select * from devinfo where left(okdatetime,10)='2017-10-22';
+
+
+2、查看某人某日操作详情
+select * from producelog where opName= "李花" and left(opTime,10)= "2017-10-28";
+针对同一个addr，最大的和最小的opTime时间差就是工作时间
+
+3、统计某人某日某小时生产数量
+select opName,left(opTime,13),count(*) from producelog where opName= "李花" and left(opTime,10)= "2017-10-28" and operation ="测试成功(2)"
+group by opName,left(opTime,13);
+
+4、每小时完成数量为173左右，每个耗时20秒 
+| 李花   | 2017-10-28 09   |      173 |
+
+
+
+select * from producelog where opName= "李花" and left(opTime,13)= "2017-10-28 09" order by opTime;
+
+
+
+select runid,name,sendtime,sendtimes,recvtime
+ from producecaseresult where runid in ( 
+select id from producelog where opName= "李花" and left(opTime,13)= "2017-10-28 09" and operation ="扫描条码(1)" order by opTime 
+) order by sendtime 
+
+
+into outfile "d:\3.xls" ;
+

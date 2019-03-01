@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.SplitPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="produce.deal.BarCodesInfoController">
+	<center>
+		<TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+				<Tab fx:id="tab_test" text="条码信息导入和查询">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<BorderPane fx:id="tableview_testresult" />
+							</center>
+							<top>
+								<HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0"
+									BorderPane.alignment="TOP_LEFT">
+									<children>
+										<Label text="起始时间">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</Label>
+										<TextField fx:id="txt_date1_b" prefWidth="120.0">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</TextField>
+										<Label text="结束时间">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</Label>
+										<TextField fx:id="txt_date1_e" prefWidth="120.0">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</TextField>
+										<Button mnemonicParsing="false" onAction="#getDataAction"
+											text="查询">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</Button>
+										<Button mnemonicParsing="false" onAction="#inportFromExcelAction"
+											text="导入数据">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</Button>
+										<Button mnemonicParsing="false" onAction="#export2ExcelAction"
+											text="导出数据">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</Button>
+										<Label text="进度信息[]" fx:id="txt_process">
+											<HBox.margin>
+												<Insets left="5.0" />
+											</HBox.margin>
+										</Label>
+									</children>
+								</HBox>
+							</top>
+						</BorderPane>
+					</content>
+				</Tab>
+
+
+			</tabs>
+		</TabPane>
+	</center>
+</BorderPane>

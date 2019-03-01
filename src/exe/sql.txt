@@ -1,0 +1,167 @@
+CREATE TABLE `producelog2mes` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `producelogID` int(11) NOT NULL,
+  `addr` varchar(255) DEFAULT NULL,
+  `priority` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `transtime` varchar(255) DEFAULT NULL,
+  `optime_b` varchar(255) DEFAULT NULL,
+  `webinfo` varchar(255) DEFAULT NULL,
+  `optime_e` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `index_mes_status` (`status`),
+  KEY `index_mes_statusaddr` (`addr`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+
+
+
+1G1L   1 =n$
+1ZC700290439
+1ZC700292846
+1ZC700297551
+1ZC700298627
+
+
+
+1、/* 2017-12 操作量，成功量 */
+select * from 
+(
+select left(optime,10) as date,count(distinct addr) as all_sl from producelog
+where left(optime,7) = '2017-12' and (addr REGEXP '[^0-9A-F]')=0
+group by left(optime,10)
+) as a,
+(
+select left(optime,10) as date,count(distinct addr) as ok_sl from producelog 
+where left(optime,7) = '2017-12' and operation ='测试成功(2)'
+group by left(optime,10)
+) as b
+where a.date = b.date
+
+
+2、/* 某日 2017-12-1 操作未成功数据查询 */
+select * from 
+(
+select distinct addr from producelog where left(optime,10) = '2017-12-24' and (addr REGEXP '[^0-9A-F]')=0
+) as a
+where a.addr not in 
+(
+select distinct addr from producelog where left(optime,10) = '2017-12-24' and operation ='测试成功(2)'
+)
+
+
+3、/* 某日 操作未成功数据的详情 */
+
+select * from producelog where addr ='201712240250' and  left(optime,10) = '2017-12-24' order by opTime;
+select * from devinfo where addr ='201712240250' ;
+
+-- 相关其他数据
+select *,conv(addr,16,10),conv(addr,16,10)-500,conv(addr,16,10)+500 from devinfo 
+where conv(addr,16,10) >= conv('201712240250',16,10)-500
+and conv(addr,16,10) <= conv('201712240250',16,10)+500;
+
+select * from devinfo where addr like CONCAT(left('201712240250',9),'%') order by addr;
+
+
+type1
+操作不成功信息，需要记录到数据库中，防止出现意外情况
+测试1失败
+扫描错误条码
+测试1失败
+
+扫描测试2
+
+
+type2  第一个条码扫描完毕，程序没有任何回复，进行了其他的设备测试
+2014522	1ZC700232588	周纪龙		2017-12-23 14:49:57:269	扫描条码(1)	0C7B-A5E7
+2014551	001700232588	周纪龙		2017-12-23 14:50:39:073	扫描条码(1)	0C7B-A5E7
+
+type3
+解析出来的设备地址 如果出现
+000000!!07*#
+1G1L   1 7]6
+都是错误的
+
+! * # 空格 字母  [  ]
+非数字都错误？ 有没有A-F  a-f ？
+
+
+
+4、统计地址信息不连续情况
+
+-- -- 无后的数据
+-- select conv(a.addr,16,10),addr from devinfo a 
+-- where 
+-- addr = '000006472750'
+-- and 
+-- not exists ( 
+-- select * from devinfo b where conv(a.addr,16,10) = conv(b.addr,16,10)+1
+-- );
+-- 
+-- 无前的数据
+-- select conv(a.addr,16,10),addr from devinfo a 
+-- where 
+-- addr = '000006472752'
+-- and not exists ( 
+-- select * from devinfo b where conv(a.addr,16,10)-1 = conv(b.addr,16,10)
+-- );
+--  
+
+
+
+
+
+1、统计每日II采生产数量
+select left(okdatetime,10),count(*) from devinfo group by left(okdatetime,10);
+
+select * from devinfo where left(okdatetime,10)='2017-10-22';
+
+
+按照产量进行日期数据排序
+select * from (
+select left(okdatetime,10),count(*)  as sl from devinfo group by left(okdatetime,10)) as a
+group by a.sl desc;
+
+
+
+生产成功的数量  (okdatetime,10)
+ 
+生产了的数量  (errdatetime,10)
+
+select * from devinfo where 
+((errdatetime >= '2017-12-23 00:00:000' and errdatetime <= '2017-12-23 23:59:59') 
+or (okdatetime >= '2017-12-23 00:00:000' and okdatetime <= '2017-12-23 23:59:59'))
+and left(okdatetime,10) != '2017-12-23';
+
+
+只是显示当前状态，可能被替换掉了，需要从明细信息中查询
+
+工作量  成功数量  
+
+
+
+2、查看某人某日操作详情
+select * from producelog where opName= "李花" and left(opTime,10)= "2017-10-28";
+针对同一个addr，最大的和最小的opTime时间差就是工作时间
+
+3、统计某人某日某小时生产数量
+select opName,left(opTime,13),count(*) from producelog where opName= "李花" and left(opTime,10)= "2017-10-28" and operation ="测试成功(2)"
+group by opName,left(opTime,13);
+
+4、每小时完成数量为173左右，每个耗时20秒 
+| 李花   | 2017-10-28 09   |      173 |
+
+
+
+select * from producelog where opName= "李花" and left(opTime,13)= "2017-10-28 09" order by opTime;
+
+
+
+select runid,name,sendtime,sendtimes,recvtime
+ from producecaseresult where runid in ( 
+select id from producelog where opName= "李花" and left(opTime,13)= "2017-10-28 09" and operation ="扫描条码(1)" order by opTime 
+) order by sendtime 
+
+
+into outfile "d:\3.xls" ;
+

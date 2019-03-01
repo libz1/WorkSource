@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="produce.deal.TerminalParameterController">
+	<center>
+		<TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+				<Tab fx:id="tab_test" text="II采生产测试">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<top>
+								<VBox BorderPane.alignment="CENTER">
+									<children>
+										<HBox alignment="CENTER_LEFT" prefHeight="45.0"
+											prefWidth="700.0">
+											<children>
+												<Label text="扫描条码" prefWidth="60.0">
+													<GridPane.margin>
+														<Insets left="5.0" />
+													</GridPane.margin>
+													<HBox.margin>
+														<Insets left="5.0" />
+													</HBox.margin>
+												</Label>
+												<TextField fx:id="input_produceBarCode"
+													prefHeight="23.0" prefWidth="300.0">
+													<HBox.margin>
+														<Insets left="5.0" right="5.0" />
+													</HBox.margin>
+												</TextField>
+												<Label fx:id="lable_result" prefHeight="40.0"
+													prefWidth="300.0" text="">
+													<HBox.margin>
+														<Insets left="10.0" />
+													</HBox.margin>
+												</Label>
+											</children>
+										</HBox>
+										<GridPane>
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES"
+													maxWidth="766.0" minWidth="10.0" prefWidth="766.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints />
+												<RowConstraints />
+												<RowConstraints />
+											</rowConstraints>
+											<children>
+												<Label fx:id="txt_showMsg" prefHeight="19.0"
+													prefWidth="757.0" text="..." GridPane.rowIndex="1">
+													<GridPane.margin>
+														<Insets left="5.0" />
+													</GridPane.margin>
+												</Label>
+												<Label fx:id="txt_showTitle" prefHeight="15.0"
+													prefWidth="495.0" text="...">
+													<GridPane.margin>
+														<Insets left="5.0" />
+													</GridPane.margin>
+												</Label>
+											</children>
+										</GridPane>
+									</children>
+								</VBox>
+							</top>
+							<center>
+								<BorderPane fx:id="tableview_testresult" />
+							</center>
+						</BorderPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+</BorderPane>

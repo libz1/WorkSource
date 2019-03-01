@@ -1,0 +1,76 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<!--Border Pane doesnt allow alignment property -->
+<!--Have to set hbox position in borderpane -->
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+	minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+	tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<tabs>
+		<Tab text="Untitled Tab 1">
+			<content>
+				<TabPane prefHeight="400.0" prefWidth="600.0"
+					tabClosingPolicy="UNAVAILABLE">
+					<tabs>
+						<Tab text="Untitled Tab 1">
+							<content>
+								<BorderPane prefHeight="200.0" prefWidth="200.0">
+									<padding>
+										<Insets top="10">
+										</Insets>
+									</padding>
+									<top>
+										<Label text="Please Sign Up" style="-fx-font-weight: bold; -fx-font-size: 20"
+											BorderPane.alignment="CENTER"></Label>
+									</top>
+									<bottom><!--Must be inside a position property -->
+										<HBox spacing="10" alignment="center">
+											<padding>
+												<Insets right="10" bottom="10"></Insets>
+											</padding>
+											<Button text="Enter"></Button>
+											<Button text="Help"></Button>
+											<Button text="Cancel"></Button>
+										</HBox>
+									</bottom>
+								</BorderPane>
+
+							</content>
+						</Tab>
+					</tabs>
+				</TabPane>
+			</content>
+		</Tab>
+		<Tab text="Untitled Tab 2">
+			<content>
+				<BorderPane prefHeight="200.0" prefWidth="200.0">
+					<padding>
+						<Insets top="10">
+						</Insets>
+					</padding>
+					<top>
+						<Label text="Please Sign Up" style="-fx-font-weight: bold; -fx-font-size: 20"
+							BorderPane.alignment="CENTER"></Label>
+					</top>
+					<bottom><!--Must be inside a position property -->
+						<HBox spacing="10" alignment="center">
+							<padding>
+								<Insets right="10" bottom="10"></Insets>
+							</padding>
+							<Button text="Enter"></Button>
+							<Button text="Help"></Button>
+							<Button text="Cancel"></Button>
+						</HBox>
+					</bottom>
+				</BorderPane>
+			</content>
+		</Tab>
+	</tabs>
+</TabPane>

@@ -1,0 +1,12 @@
+[on]type=HS5320;port=48;
+[off]port=48;
+[ReadMeter]type=HS5320;port=48;
+
+
+
+ByteByReference[] by = paraBuf.authorNo;
+for(ByteByReference c : by) {
+		if(0 != c.getValue()) {
+			System.out.println(c.getValue());
+		}
+	}

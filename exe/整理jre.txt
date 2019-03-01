@@ -1,0 +1,8 @@
+jre license
+bin 保留 java.exe或javaw.exe
+lib 保留 rt jsse jce charsets 
+保留i386和zi
+.lib下 除了库之外的属性文件都保留
+
+
+清理库文件中大的

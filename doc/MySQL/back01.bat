@@ -1,0 +1,1 @@
+mysqldump --defaults-file="my.ini" -hlocalhost -P3306 --user=root --routines --default-character-set=utf8 --max_allowed_packet=1G produce> d:\produce-01.sql

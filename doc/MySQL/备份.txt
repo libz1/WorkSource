@@ -1,0 +1,22 @@
+http://niweiwei.iteye.com/blog/2153065
+
+1、备份
+mysqldump --defaults-file="my.ini" -hlocalhost -P3306 --user=root --routines --default-character-set=utf8 --max_allowed_packet=1G produce> d:\produce-01.sql
+
+"my.ini"
+[mysqldump]
+user=root
+password=eastsoft
+
+[client]
+user=root
+password=eastsoft
+
+
+2、恢复
+mysql -u root -p produce < c:\produce.sql
+
+
+
+3、windows计划任务
+每天备份一份  周一到周七   

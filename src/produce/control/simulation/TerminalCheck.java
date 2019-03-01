@@ -94,9 +94,11 @@ public class TerminalCheck {
 					System.out.println(meterno);
 					return;
 				}
-				String terminalMAC = ""; // 测试完成后，需要将IP设置为默认的129.1.22.96
 
-				// 返回结果：通信IP、通信port、终端通信地址、待检信道列表、信道可用标志
+				// 测试完成后，需要将IP设置为默认的129.1.22.96 ,MAC地址不能有所变化
+				String terminalMAC = "";
+
+				// 返回结果：通信IP、通信port、终端通信地址、待检信道列表、信道可用标志、MAC
 				Object[] result = SimuRun.getUserfulChanel(meterno, COM, model);
 				if (!result[0].equals("")) {
 					param = result[0] + ":" + result[1];
@@ -106,6 +108,10 @@ public class TerminalCheck {
 					MetersChannelResults.put(meterno, (String)result[4]);
 					Params.put(meterno, param);
 					MeterAddrs.put(meterno, meterAddr);
+					if (!((String)result[5]).equals("")){
+						TerminalMACs.put(meterno, (String)result[5]);
+						terminalMAC = (String)result[5];
+					}
 				} else {
 					HaveMeters.put(meterno, "0");
 					MetersEnd.put(meterno, "1");
@@ -117,7 +123,7 @@ public class TerminalCheck {
 				String NetIP = "129.1.22.";
 				// 入参：当前的终端地址，通信参数、表位信息（根据表位信息，自动得到需要设置成为的终端地址）、
 				// 返回：新的IP地址（同时也是终端地址）、MAC地址信息、操作结果对象
-				result = SimuRun.setIP_MAC(meterAddr, param, meterno, NetIP);
+				result = SimuRun.setIP_MAC(meterAddr, param, meterno, NetIP,terminalMAC);
 				if (((BaseCommLog) result[2]).getResult().equals("OK")) {
 					meterAddr = (String) result[0];
 					if (param.indexOf("COM") < 0)

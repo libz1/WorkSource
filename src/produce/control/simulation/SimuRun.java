@@ -867,10 +867,10 @@ public class SimuRun {
 	}
 
 	// 国网或南网各种集中器通信通道检测
-	// 返回结果：通信IP、通信port、终端通信地址、待检信道列表、信道可用标志
+	// 返回结果：通信IP[0]、通信port[1]、终端通信地址[2]、待检信道列表[3]、信道可用标志[4]、读取到的终端MAC（无效则为“”）[5]
 	public static Object[] getUserfulChanel(String meterno, String COM, String model) {
 		String[] channels = null; // 需要验证信道个数，其先后次序也是信道选用的优先级
-		Object[] ret = { "", 0, "", channels, "" }; // IP、port、terminalIP、信道列表、信道可用信息
+		Object[] ret = { "", 0, "", channels, "","" }; // IP、port、terminalIP、信道列表、信道可用信息
 		// 通过RJ45信道，可以获取终端IP地址信息，组织终端交互报文时需要
 		// 但是优先级为从PS2开始
 		if (model.equals("国网")) {
@@ -901,16 +901,25 @@ public class SimuRun {
 		Object[] o = null;
 		BaseCommLog result = null;
 		ret[4] = ""; // 累加类型，所以需要提前清空
+		ret[5] = ""; // MAC地址信息
 		for (String type : channels) {
 			o = PlatFormUtil.getIPParam(meterno, type);
 			IP = (String) o[0];
 			port = (int) o[1];
 			msg = "表位" + meterno + "-" + type + "-信道检测" + IP + ":" + port;
+<<<<<<< .mine
+//			sData = getTermianlFrame(terminalIP, "读时钟"); // 注意必须使用terminalIP！！！
+//			expect = "68************68940A04969605**************16";
+			sData = getTermianlFrame(terminalIP, "读IP和MAC"); // 注意必须使用terminalIP！！！
+//			680000C0A87F6068940E04969610C0A87F60023A190200019816
+			expect = "68************68940E04969610**********************16";
+=======
 //			sData = getTermianlFrame(terminalIP, "读时钟"); // 注意必须使用terminalIP！！！
 //			expect = "68************68940A04969605**************16";
 			sData = getTermianlFrame(terminalIP, "读IP和MAC"); // 注意必须使用terminalIP！！！
 //			680000C0A87F6068940E04969610C0A87F60023A190200019816
 			expect = "68************68940A04969605**************16";
+>>>>>>> .r92
 			expect = "68************68940E04969610**************0200019816";
 			expect = "68************68940E04969610**********************16";
 			result = commWithRecv.deal_one("【" + msg + "】", IP + ":" + port, sData, expect, 2500);
@@ -919,6 +928,10 @@ public class SimuRun {
 					ret[0] = IP;
 					ret[1] = port;
 					ret[2] = terminalIP;
+					// 解析得到MAC地址信息，如果是符合现在MAC地址定义的，则保留
+					String mac = result.getRecv().substring(36);
+					if (Util698.is_validMAC(mac))
+						ret[5] = mac;
 				}
 				ret[4] += "1";
 			} else
@@ -1049,7 +1062,7 @@ public class SimuRun {
 
 	// 入参：当前的终端地址，通信参数、表位信息（根据表位信息，自动得到需要设置成为的终端地址）、
 	// 返回：新的IP地址（同时也是终端地址）、MAC地址信息、操作结果对象
-	public static Object[] setIP_MAC(String terminlIP, String param, String meterno, String NetIP) {
+	public static Object[] setIP_MAC(String terminlIP, String param, String meterno, String NetIP, String terminalMAC) {
 		BaseCommLog result = null;
 		CommWithRecv commWithRecv = new CommWithRecv();
 		String dataitem = "04 96 96 01";
@@ -1057,7 +1070,14 @@ public class SimuRun {
 		meterno = "00"+meterno;
 		meterno = meterno.substring(meterno.length()-2,meterno.length());
 		String data = Util698.StrIP2HEX(newTermialAddr);
-		Object[] mac = PlatFormUtil.getMAC(Util698.getDateTimeSSS_new(), DataConvert.String2Int(meterno), PlatFormParam.getInstance().getPlatFormNO());
+
+		// xuky 2019.03.01 如果已有MAC地址，则不要再次产生，继续使用原先的
+		Object[] mac = {0,""};
+		if (!terminalMAC.equals(""))
+			mac[1] = terminalMAC;
+		else
+			mac = PlatFormUtil.getMAC(Util698.getDateTimeSSS_new(), DataConvert.String2Int(meterno), PlatFormParam.getInstance().getPlatFormNO());
+
 		data += mac[1];
 		String sData = getTermianlFrame(terminlIP, "14", dataitem, data);
 		String msg = "修改集中器IP及MAC 原：" + param;

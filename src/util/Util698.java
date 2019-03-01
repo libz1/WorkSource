@@ -2071,7 +2071,24 @@ public class Util698 {
 	    return ret;
 	}
 
+	// 验证MAC是否为本系统产生的 023A19020001
+	public static boolean is_validMAC(String mac){
+		boolean ret = false;
+		if (mac.substring(0,2).equals("02")){
+			int yy = DataConvert.String2Int(mac.substring(4,6));
+			int mm = DataConvert.String2Int(mac.substring(6,8));
+			if (yy>=18 && yy <=28)
+				if (mm >=0 && mm <=12 )
+					return true;
+		}
+		return ret;
+	}
+
 	public static void main(String[] arg) {
+
+		// 验证MAC是否为本系统产生的 023A19020001
+		System.out.println(is_validMAC("023A19020001"));
+
 //		String sendData = Util698.getDateTimeSSS_new();
 //		//yyyy-MM-dd HH:mm:ss:SSS
 //		sendData = sendData.replaceAll("-", "");
@@ -2101,7 +2118,11 @@ public class Util698 {
 
 
 //		String str = "FEFEFEFEFE0143173030303036303030303030333030303030366F17";
-		String str = "FEFEFEFEFE014317";
+		String str = "680000C0A87F6068940E04969610C0A87F60023A190200019816";
+		String mac = str.substring(36,48);
+		mac += "";
+
+
 		System.out.println(str);
 		System.out.println(Util698.isCompleteFrame(str, "11"));
 
